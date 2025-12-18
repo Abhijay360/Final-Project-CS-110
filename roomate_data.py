@@ -175,7 +175,7 @@ def add_students_with_majors(database: List[Dict], majors: List[str], num_per_ma
     # Get names that are already used
     used_names = {s.get("name", "").lower() for s in database}
     
-    # Additional names for new students
+    # Additional names for new students as I had missed out on some majors so these are students who have the newer majors
     additional_names = ["Jamie Kim", "River Patel", "Sage Williams", "Phoenix Rodriguez",
                        "Skylar Nguyen", "Rowan Garcia", "Emery Thompson", "Finley Moore",
                        "Kai Martinez", "Luna Chen", "Nova Anderson", "Zoe Taylor",
@@ -708,7 +708,7 @@ if __name__ == "__main__":
     else:
         print(f"\n✓ Loaded database with {len(database)} students.")
         
-        # Check if we need to add students with new majors
+        # Check if we need to add students with new majors as I missed out on some majors before
         existing_majors = {s.get("major", "").lower() for s in database}
         new_majors = ["Nursing", "History", "Art", "Animal Sciences", "Economics", "Chemistry"]
         missing_majors = [m for m in new_majors if m.lower() not in existing_majors]
@@ -822,4 +822,5 @@ def test_matching_system():
 # Uncomment to run tests:
 # test_matching_system()
 """
+
 
